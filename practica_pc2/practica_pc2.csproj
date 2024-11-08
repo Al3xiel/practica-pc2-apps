@@ -23,7 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Work\Interfaces\REST\Resources\" />
       <Folder Include="Work\Interfaces\REST\Transform\" />
     </ItemGroup>
 
