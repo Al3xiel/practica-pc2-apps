@@ -3,6 +3,11 @@ using practica_pc2.Shared.Domain.Repositories;
 using practica_pc2.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using practica_pc2.Shared.Infrastructure.Persistence.EFC.Configuration;
 using practica_pc2.Shared.Infrastructure.Persistence.EFC.Repositories;
+using practica_pc2.Work.Application.Internal.CommandServices;
+using practica_pc2.Work.Application.Internal.QueryServices;
+using practica_pc2.Work.Domain.Repositories;
+using practica_pc2.Work.Domain.Services;
+using practica_pc2.Work.Infrastructure.Persistence.EFC.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +45,9 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Work Bounded Context Dependency Injection Configuration
 //TO-DO: Add Dependency Injection Configuration Here Repositories, and Services commands and queries
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductCommandService, ProductCommandService>();
+builder.Services.AddScoped<IProductQueryService, ProductQueryService>();
 
 var app = builder.Build();
 
