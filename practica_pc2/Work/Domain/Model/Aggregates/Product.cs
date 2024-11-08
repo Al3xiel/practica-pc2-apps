@@ -10,11 +10,18 @@ public partial class Product
     public string Description { get; private set; }
     public EProductStatus Status { get; private set; }
     
-    public Product(string productCode, string name, string description, EProductStatus status)
+    public Product(string name, string description, string status)
     {
-        ProductCode = productCode;
+        ProductCode = Guid.NewGuid().ToString();
         Name = name;
         Description = description;
-        Status = status;
+        if (Enum.TryParse(status, true, out EProductStatus parsedStatus))
+        {
+            Status = parsedStatus;
+        }
+        else
+        {
+            throw new ArgumentException($"Invalid status value: {status}");
+        }
     }
 }
