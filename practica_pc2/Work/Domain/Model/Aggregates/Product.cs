@@ -10,6 +10,8 @@ public partial class Product
     public string Description { get; private set; }
     public EProductStatus Status { get; private set; }
     
+    public ICollection<ProductReview> Reviews { get; }
+    
     private Product() { }
     
     public Product(string name, string description, string status)

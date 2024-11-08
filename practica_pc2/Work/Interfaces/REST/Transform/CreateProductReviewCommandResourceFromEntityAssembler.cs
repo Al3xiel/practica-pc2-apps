@@ -1,10 +1,11 @@
 using practica_pc2.Work.Domain.Model.Commands;
+using practica_pc2.Work.Interfaces.REST.Resources;
 
 namespace practica_pc2.Work.Interfaces.REST.Transform;
 
 public class CreateProductReviewCommandResourceFromEntityAssembler
 {
-    public static CreateProductReviewCommand toCommandFromResource(CreateProductReviewCommand resource, int productId)
+    public static CreateProductReviewCommand ToCommandFromResource(CreateProductReviewResource resource, int productId)
     {
         return new CreateProductReviewCommand(
             resource.UserEmail, 

@@ -13,7 +13,7 @@ public class ProductReviewCommandService(
 {
     public async Task<ProductReview?> Handle(CreateProductReviewCommand command)
     {
-        var productReview = new ProductReview(command.UserEmail, command.Rating,command.ReviewCriterion , command.Comment);
+        var productReview = new ProductReview(command.UserEmail, command.Rating,command.ReviewCriterion , command.Comment, command.ProductId);
         await productReviewRepository.AddAsync(productReview);
         await unitOfWork.CompleteAsync();
         var product = await productRepository.FindByIdAsync(command.ProductId);

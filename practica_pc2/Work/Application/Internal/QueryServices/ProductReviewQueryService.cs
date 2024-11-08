@@ -15,4 +15,9 @@ public class ProductReviewQueryService(IProductReviewRepository productReviewRep
         }
         return await productReviewRepository.FindProductReviewsByProductIdAsync(query.ProductId);
     }
+
+    public async Task<ProductReview?> Handle(GetProductReviewByIdQuery query)
+    {
+        return await productReviewRepository.FindByIdAsync(query.productReviewId);
+    }
 }
