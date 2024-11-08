@@ -25,9 +25,6 @@
     <ItemGroup>
       <Folder Include="Work\Application\Internal\CommandServices\" />
       <Folder Include="Work\Application\Internal\QueryServices\" />
-      <Folder Include="Work\Domain\Model\Entities\" />
-      <Folder Include="Work\Domain\Repositories\" />
-      <Folder Include="Work\Domain\Services\" />
       <Folder Include="Work\Infrastructure\Persistence\EFC\Repositories\" />
       <Folder Include="Work\Interfaces\REST\Resources\" />
       <Folder Include="Work\Interfaces\REST\Transform\" />
