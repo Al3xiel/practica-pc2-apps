@@ -4,6 +4,7 @@ namespace practica_pc2.Work.Domain.Model.Aggregates;
 
 public partial class ProductReview
 {
+    public int Id { get; set; }
     public string UserEmail { get; set; }
     public int Rating { get; set; }
     public EProductReviewCriterion ReviewCriterion { get; set; }
