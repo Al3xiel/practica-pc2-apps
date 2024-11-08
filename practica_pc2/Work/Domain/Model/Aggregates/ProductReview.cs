@@ -8,6 +8,7 @@ public partial class ProductReview
     public int Rating { get; set; }
     public EProductReviewCriterion ReviewCriterion { get; set; }
     public string Comment { get; set; }
+    public int ProductId { get; set; }
     public Product Product { get; set; }
     
     public ProductReview() { }
