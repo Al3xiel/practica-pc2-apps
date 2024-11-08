@@ -5,6 +5,7 @@ using practica_pc2.Shared.Infrastructure.Persistence.EFC.Configuration;
 using practica_pc2.Shared.Infrastructure.Persistence.EFC.Repositories;
 using practica_pc2.Work.Application.Internal.CommandServices;
 using practica_pc2.Work.Application.Internal.QueryServices;
+using practica_pc2.Work.Domain.Model.Aggregates;
 using practica_pc2.Work.Domain.Repositories;
 using practica_pc2.Work.Domain.Services;
 using practica_pc2.Work.Infrastructure.Persistence.EFC.Repositories;
@@ -48,6 +49,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductCommandService, ProductCommandService>();
 builder.Services.AddScoped<IProductQueryService, ProductQueryService>();
+
+builder.Services.AddScoped<IProductReviewRepository, ProductReviewRepository>();
+builder.Services.AddScoped<IProductReviewCommandService, ProductReviewCommandService>();
+builder.Services.AddScoped<IProductReviewQueryService, ProductReviewQueryService>();
 
 var app = builder.Build();
 
